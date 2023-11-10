@@ -11,6 +11,7 @@ struct LinkedListNode
   LinkedListNode(const std::string &name)
     : m_name(name), pNext(nullptr)
   {
+   
   }
   LinkedListNode()
     : LinkedListNode("")
@@ -48,9 +49,9 @@ public:
   bool insert_head(LinkedListNode *node);
 
   /**
-   * Insert an elmenet after a given location
+   * Insert an element after a given location
    *
-   * loc the elment after we want to insert the node
+   * loc the element after we want to insert the node
    */
   bool insert_after(LinkedListNode *loc, LinkedListNode *node);
 
