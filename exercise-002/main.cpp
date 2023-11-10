@@ -1,6 +1,7 @@
 #include <fmt/chrono.h>
 #include <fmt/format.h>
 
+#include <chrono>
 #include "CLI/CLI.hpp"
 #include "config.h"
 
@@ -53,12 +54,12 @@ auto main(int argc, char **argv) -> int
 
 
 //Aufgabenteil "Strava für Vektoren":
-     auto start = std::chrono::system_clock::now();
+     auto start{std::chrono::system_clock::now()};
 
     std::sort(data.begin(), data.end()); //hier sortieren
     
     // Aufgabenteil "Strava für Vektoren":
-    auto end = std::chrono::system_clock::now();
+    auto end{std::chrono::system_clock::now()};
 
    fmt::print("Geordnete zufällige Zahlen im Array: ");   // Ausgeben der geordneten Zufallszahlen
     for (int i = 0; i < count; ++i) {  //oder anstatt count data.size() verwenden
@@ -67,14 +68,14 @@ auto main(int argc, char **argv) -> int
     fmt::print("\n");    
 
     
-    auto elapsed = end - start;
+    //auto elapsed = end - start;
 
     // this constructs a duration object using milliseconds
-    //auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+    auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 
     // Ausgabe der Zeiten
 
-    fmt::print("Time for sort {}", elapsed);
+    fmt::print("Time for sort {}\n", elapsed);
 
     return 0; /* exit gracefully*/
 }
