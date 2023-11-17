@@ -123,7 +123,7 @@ size_t LinkedList::size()
 
 void LinkedList::traverse(std::function<void(const std::string &)> func)
 {
-  traverse([&](LinkedListNode *node) { func(node->m_name); });
+  traverse([&](LinkedListNode *node) { func(node->m_name); });  // Lambda Funktion -> Anonyme Funktion, besitzt keinen Namen und keinen Rückgabewert
 }
 
 void LinkedList::traverse(std::function<void(LinkedListNode *node)> func)

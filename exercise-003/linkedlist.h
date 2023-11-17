@@ -17,7 +17,7 @@ struct LinkedListNode
     : LinkedListNode("")
   {
   }
-  ~LinkedListNode()
+  ~LinkedListNode() // Destructer erkennbar durch ~
   {
     fmt::print("    -> Killing {}\n", m_name);
   }
@@ -74,9 +74,9 @@ public:
   /**
    * Traverse the list and call the operation
    */
-  void traverse(std::function<void(const std::string &)> func);
+  void traverse(std::function<void(const std::string &)> func); //Traversieren -> einmal durch die Liste durchgehen -> for each element wird eine Funktion aufgerufen
   void traverse(std::function<void(LinkedListNode *node)> func);
-
+  
 private:
   LinkedListNode *m_head;
   LinkedListNode *m_tail;
