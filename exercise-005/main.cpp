@@ -1,8 +1,10 @@
 #include <fmt/chrono.h>
 #include <fmt/format.h>
+#include <thread>
 
 #include "CLI/CLI.hpp"
 #include "config.h"
+#include "Garagentor.cpp"
 
 auto main(int argc, char **argv) -> int
 {
@@ -29,6 +31,11 @@ auto main(int argc, char **argv) -> int
     fmt::print("Hello, {}!\n", app.get_name());
 
     /* INSERT YOUR CODE HERE */
+      while(1 == 1)
+    {
+        stateMachine();
+        sleep_ms(100);
+    }
 
     return 0; /* exit gracefully*/
 }
